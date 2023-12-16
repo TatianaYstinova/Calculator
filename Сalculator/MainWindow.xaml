@@ -32,13 +32,13 @@
         <Button x:Name="ButtonEight" Grid.Column="1" Content="8" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center"  Click="ButtonNumber_Click" Height="137" Width="267" FontSize="72"/>
         <Button x:Name="ButtonNine" Grid.Column="2" Content="9" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Height="137" Width="268" FontSize="72" Click="ButtonNumber_Click"/>
         <Button x:Name="ButtonZero" Grid.Column="1" Content="0" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" Height="137" Width="200" Click="ButtonNumber_Click" FontSize="72"/>
-        <Button x:Name="ButtonPlus" Grid.Column="3" Content="+" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Center" Height="137" Width="100"  FontSize="72" FontWeight="Bold" Click="ButtonPlus_Click"/>
-        <Button x:Name="ButtonMinus" Grid.Column="3" Content="-" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Center" Height="137" Width="100" Margin="100,0,0,0" FontSize="72" FontWeight="Bold"/>
-        <Button x:Name="ButtonMultiply" Grid.Column="3" Content="*" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Height="137" Width="200" FontSize="72" FontWeight="Bold"/>
-        <Button x:Name="ButtonDecimalDivision" Grid.Column="3" Content="," HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" Height="137" Width="200" FontSize="72" FontWeight="Bold"/>
-        <Button x:Name="ButtonEqually" Grid.Column="2" Content="=" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" Height="137" Width="200" FontSize="72" FontWeight="Bold"/>
-        <Button x:Name="ButtonRemoval" Content="C" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" Height="137" Width="200"  FontSize="72" FontWeight="Bold"/>
-        <Button x:Name="ButtonToShare" Grid.Column="3" Content="/" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Height="136" Width="200" FontSize="72" FontWeight="Bold"/>
+        <Button x:Name="ButtonPlus" Grid.Column="3" Content="+" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Center" Height="137" Width="100"  FontSize="72" FontWeight="Bold" Click="Operator_Click"/>
+        <Button x:Name="ButtonMinus" Grid.Column="3" Content="-" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Center" Height="137" Width="100" Margin="100,0,0,0" FontSize="72" FontWeight="Bold" Click="Operator_Click"/>
+        <Button x:Name="ButtonMultiply" Grid.Column="3" Content="*" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Height="137" Width="200" FontSize="72" FontWeight="Bold"  Click="Operator_Click"/>
+        <Button x:Name="ButtonDecimalDivision" Grid.Column="3" Content="," HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" Height="137" Width="200" FontSize="72" FontWeight="Bold"  Click="Operator_Click"/>
+        <Button x:Name="ButtonEqually" Grid.Column="2" Content="=" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Bottom" Height="137" Width="200" FontSize="72" FontWeight="Bold"  Click="Equals_Click" Grid.RowSpan="2"/>
+        <Button x:Name="ButtonRemoval" Content="C" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" Height="137" Width="200"  FontSize="72" FontWeight="Bold"  Click="Operator_Click"/>
+        <Button x:Name="ButtonToShare" Grid.Column="3" Content="/" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Height="136" Width="200" FontSize="72" FontWeight="Bold"  Click="Operator_Click"/>
 
     </Grid>
 </Window>

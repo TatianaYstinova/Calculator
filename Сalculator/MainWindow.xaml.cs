@@ -20,38 +20,54 @@ namespace Сalculator
     /// </summary>
     public partial class MainWindow : Window
     {
+        private int _previousNumber;
+        private string _operation;
+        
         public MainWindow()
         {
             InitializeComponent();
         }
-        private int _previosNumber;// предыдущий номер
-       
 
         private void ButtonNumber_Click(object sender, RoutedEventArgs e)
         {
-            TextBox.Text +=((Button)sender).Content ;
+            TextBox.Text += ((Button)sender).Content;
         }
-
-        private void ButtonOperator_Click(object sender, RoutedEventArgs e)
+        private void Operator_Click(object sender, RoutedEventArgs e)
         {
-
-            _previosNumber = Convert.ToInt32(TextBox.Text);
-            TextBox.Text = " ";
-            try
+            if (TextBox.Text == "C")
             {
-                if (TextBox.Text == "С")
-                {
-                    TextBox.Text = " ";
-                    return;
-                }
-                if(TextBox.Text == "=")
-                {
-                    
-                }
-                
-
+                TextBox.Text = " ";
+                return;
             }
-            catch { }
+            _operation = ((Button)sender).Content.ToString(); // присваиваю значение операции из нажатой кнопки
+            _previousNumber = int.Parse(TextBox.Text); // сохраняю предыдущее значение ввода
+            TextBox.Text = ""; // Сбрасываю значение TextBox для следующего ввода
         }
+
+        private void Equals_Click(object sender, RoutedEventArgs e)
+        {
+            int currentInput = int.Parse(TextBox.Text); // получаю текущий элемент 
+            int result = 0;
+
+            switch (_operation)
+            {
+                case "+":
+                    result = _previousNumber + Convert.ToInt32(TextBox.Text);
+                    break;
+                case "-":
+                    result = _previousNumber - Convert.ToInt32(TextBox.Text);
+                    break;
+                case "*":
+                    result = _previousNumber * Convert.ToInt32(TextBox.Text);
+                    break;
+                case "/":
+                    result = _previousNumber / Convert.ToInt32(TextBox.Text);
+                    break;
+            }
+             TextBox.Text = result.ToString();
+             
+        }
+
     }
+         
 }
