@@ -63,11 +63,11 @@ namespace Сalculator
                 case "/":
                     result = _previousNumber / Convert.ToInt32(TextBox.Text);
                     break;
+                case ",":
+                    result = _previousNumber % Convert.ToInt32(TextBox.Text);
+                    break;
             }
              TextBox.Text = result.ToString();
-             
         }
-
-    }
-         
+    }    
 }
