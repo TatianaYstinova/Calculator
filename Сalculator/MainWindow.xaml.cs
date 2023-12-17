@@ -20,7 +20,7 @@ namespace Сalculator
     /// </summary>
     public partial class MainWindow : Window
     {
-        private int _previousNumber;
+        private double _previousNumber;
         private string _operation;
         
         public MainWindow()
@@ -34,40 +34,48 @@ namespace Сalculator
         }
         private void Operator_Click(object sender, RoutedEventArgs e)
         {
-            if (TextBox.Text == "C")
-            {
-                TextBox.Text = " ";
-                return;
-            }
             _operation = ((Button)sender).Content.ToString(); // присваиваю значение операции из нажатой кнопки
-            _previousNumber = int.Parse(TextBox.Text); // сохраняю предыдущее значение ввода
+            _previousNumber = double.Parse(TextBox.Text); // сохраняю предыдущее значение ввода
             TextBox.Text = ""; // Сбрасываю значение TextBox для следующего ввода
         }
 
         private void Equals_Click(object sender, RoutedEventArgs e)
         {
-            int currentInput = int.Parse(TextBox.Text); // получаю текущий элемент 
-            int result = 0;
+            double currentInput = double.Parse(TextBox.Text); // получаю текущий элемент 
+            double result = 0;
 
             switch (_operation)
             {
                 case "+":
-                    result = _previousNumber + Convert.ToInt32(TextBox.Text);
+                    result = _previousNumber + currentInput;
                     break;
                 case "-":
-                    result = _previousNumber - Convert.ToInt32(TextBox.Text);
+                    result = _previousNumber - currentInput;
                     break;
                 case "*":
-                    result = _previousNumber * Convert.ToInt32(TextBox.Text);
+                    result = _previousNumber * currentInput;
                     break;
                 case "/":
-                    result = _previousNumber / Convert.ToInt32(TextBox.Text);
-                    break;
-                case ",":
-                    result = _previousNumber % Convert.ToInt32(TextBox.Text);
+                    result = _previousNumber / currentInput;
                     break;
             }
-             TextBox.Text = result.ToString();
+
+            TextBox.Text = result.ToString();
         }
+        private void ButtonRemoval_Click(object sender, RoutedEventArgs e)// кнопка с
+        {
+            TextBox.Text = "";
+        }
+       
+        private void ButtonDecimalDivision_Click(object sender, RoutedEventArgs e)// добавление запятой
+        {
+            if (!TextBox.Text.Contains(","))
+            {
+                TextBox.Text += ",";
+            }
+
+        }
+
     }    
+
 }
